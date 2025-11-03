@@ -3,6 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Palette, Tag } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import aboutUsHome from '@/assets/about_us_home.jpg';
+import optimumImg from '@/assets/optimum.png';
+import premiumImg from '@/assets/premium.jpg';
+import luxLineImg from '@/assets/lux_line.jpg';
+import slidingGlassImg from '@/assets/sliding_glass.jpg';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -12,21 +17,25 @@ const Home = () => {
       name: 'Optimum',
       path: '/producten/optimum',
       description: t('Basis kwaliteit maatwerk veranda', 'Basic quality custom veranda'),
+      image: optimumImg,
     },
     {
       name: 'Premium',
       path: '/producten/premium',
       description: t('Verbeterde afwerking & opties', 'Improved finish & options'),
+      image: premiumImg,
     },
     {
       name: 'Lux Line',
       path: '/producten/lux-line',
       description: t('Hoogste kwaliteit, luxe uitstraling', 'Highest quality, luxury appearance'),
+      image: luxLineImg,
     },
     {
       name: 'Sliding Glass',
       path: '/producten/sliding-glass',
       description: t('Glazen schuifwand systemen', 'Glass sliding wall systems'),
+      image: slidingGlassImg,
     },
   ];
 
@@ -86,7 +95,13 @@ const Home = () => {
                 <Link to="/over-ons">{t('Lees meer', 'Read more')}</Link>
               </Button>
             </div>
-            <div className="h-[400px] bg-muted rounded-lg shadow-elegant"></div>
+            <div className="h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
+              <img 
+                src={aboutUsHome} 
+                alt="Power Veranda showroom"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -108,7 +123,13 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <Card key={product.path} className="overflow-hidden hover:shadow-elegant transition-smooth">
-                <div className="h-48 bg-muted"></div>
+                <div className="h-48 bg-muted overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-smooth"
+                  />
+                </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                   <p className="text-muted-foreground mb-4">{product.description}</p>

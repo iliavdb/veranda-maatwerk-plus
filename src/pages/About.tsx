@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
+import overOnsImg from '@/assets/over_ons.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -27,7 +28,13 @@ const About = () => {
             </p>
           </div>
           
-          <div className="h-[400px] bg-muted rounded-lg shadow-elegant"></div>
+          <div className="h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
+            <img 
+              src={overOnsImg} 
+              alt="Power Veranda magazijn"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">

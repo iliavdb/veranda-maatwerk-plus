@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import premiumImg from '@/assets/premium.jpg';
 
 const Premium = () => {
   const { t } = useLanguage();
@@ -15,7 +16,13 @@ const Premium = () => {
 
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           <div className="space-y-6">
-            <div className="h-[400px] bg-muted rounded-lg shadow-elegant"></div>
+            <div className="h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
+              <img 
+                src={premiumImg} 
+                alt="Veranda Premium"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="grid grid-cols-3 gap-4">
               <div className="h-32 bg-muted rounded-lg"></div>
               <div className="h-32 bg-muted rounded-lg"></div>
