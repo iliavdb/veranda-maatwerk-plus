@@ -1,16 +1,33 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import gallery1 from '@/assets/gallery/gallery_1.png';
+import gallery2 from '@/assets/gallery/gallery_2.png';
+import gallery3 from '@/assets/gallery/gallery_3.png';
+import gallery4 from '@/assets/gallery/gallery_4.png';
+import gallery5 from '@/assets/gallery/gallery_5.png';
+import gallery6 from '@/assets/gallery/gallery_6.png';
+import gallery7 from '@/assets/gallery/gallery_7.png';
+import gallery8 from '@/assets/gallery/gallery_8.png';
+import gallery9 from '@/assets/gallery/gallery_9.png';
+import gallery10 from '@/assets/gallery/gallery_10.png';
 
 const Gallery = () => {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<'all' | 'veranda'>('all');
 
-  // Placeholder gallery items - user will add their own photos
-  const galleryItems = Array.from({ length: 12 }, (_, i) => ({
-    id: i + 1,
-    type: 'veranda',
-  }));
+  const galleryItems = [
+    { id: 1, type: 'veranda', image: gallery1 },
+    { id: 2, type: 'veranda', image: gallery2 },
+    { id: 3, type: 'veranda', image: gallery3 },
+    { id: 4, type: 'veranda', image: gallery4 },
+    { id: 5, type: 'veranda', image: gallery5 },
+    { id: 6, type: 'veranda', image: gallery6 },
+    { id: 7, type: 'veranda', image: gallery7 },
+    { id: 8, type: 'veranda', image: gallery8 },
+    { id: 9, type: 'veranda', image: gallery9 },
+    { id: 10, type: 'veranda', image: gallery10 },
+  ];
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -35,12 +52,13 @@ const Gallery = () => {
         {galleryItems.map((item) => (
           <div
             key={item.id}
-            className="aspect-square bg-muted rounded-lg overflow-hidden shadow-elegant hover:shadow-elegant-xl transition-smooth cursor-pointer"
+            className="aspect-square bg-muted rounded-lg overflow-hidden shadow-elegant hover:shadow-elegant-xl transition-smooth cursor-pointer group"
           >
-            {/* Placeholder for images - user will replace these */}
-            <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-              <span className="text-sm">{t('Foto', 'Photo')} {item.id}</span>
-            </div>
+            <img
+              src={item.image}
+              alt={`Power Veranda ${t('project', 'project')} ${item.id}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+            />
           </div>
         ))}
       </div>
