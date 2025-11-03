@@ -59,9 +59,9 @@ const Contact = () => {
                   <h3 className="font-semibold mb-1">{t('Telefoon', 'Phone')}</h3>
                   <a
                     href="tel:+31610576944"
-                    className="text-accent hover:underline"
+                    className="text-accent hover:underline block"
                   >
-                    +31 6 10576944
+                    06 10 57 69 44
                   </a>
                   <p className="text-sm text-muted-foreground">(WhatsApp)</p>
                 </div>
