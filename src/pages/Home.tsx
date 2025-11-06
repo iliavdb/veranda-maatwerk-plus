@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Clock, Palette, Tag } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 import aboutUsHome from '@/assets/about_us_home.jpg';
 import optimumImg from '@/assets/optimum.png';
 import premiumImg from '@/assets/premium.jpg';
@@ -71,6 +72,7 @@ const Home = () => {
         <Carousel
           opts={{ loop: true }}
           plugins={[
+            Fade(),
             Autoplay({
               delay: 5000,
             }),
