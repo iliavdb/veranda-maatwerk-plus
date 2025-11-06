@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import { Clock, Palette, Tag } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Autoplay from 'embla-carousel-autoplay';
 import aboutUsHome from '@/assets/about_us_home.jpg';
 import optimumImg from '@/assets/optimum.png';
 import premiumImg from '@/assets/premium.jpg';
 import luxLineImg from '@/assets/lux_line.jpg';
 import slidingGlassImg from '@/assets/sliding_glass.jpg';
+import hero1 from '@/assets/hero-1.jpg';
+import hero2 from '@/assets/hero-2.jpg';
+import hero3 from '@/assets/hero-3.jpg';
 
 const Home = () => {
   const { t } = useLanguage();
@@ -57,12 +62,36 @@ const Home = () => {
     },
   ];
 
+  const heroImages = [hero1, hero2, hero3];
+
   return (
     <div className="w-full">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 hero-gradient"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/20"></div>
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
+          className="absolute inset-0"
+        >
+          <CarouselContent>
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="relative h-[600px] w-full">
+                  <img 
+                    src={image} 
+                    alt={`Hero ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             {t('Ontdek onze maatwerk veranda\'s', 'Discover our custom verandas')}
