@@ -68,7 +68,7 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[400px] md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
         <Carousel
           opts={{ loop: true }}
           plugins={[
@@ -82,7 +82,7 @@ const Home = () => {
           <CarouselContent>
             {heroImages.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-[600px] w-full">
+                <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full">
                   <img 
                     src={image} 
                     alt={`Hero ${index + 1}`}
@@ -95,10 +95,10 @@ const Home = () => {
           </CarouselContent>
         </Carousel>
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
             {t('Ontdek onze maatwerk veranda\'s', 'Discover our custom verandas')}
           </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             {t(
               'Hoogwaardige veranda\'s, glazen schuifwanden en aluminium onderdelen op maat',
               'High-quality verandas, glass sliding walls and custom aluminum parts'
@@ -111,12 +111,12 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-12 md:py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6">{t('Over Ons', 'About Us')}</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">{t('Over Ons', 'About Us')}</h2>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
                 {t(
                   'Power Veranda is gespecialiseerd in maatwerk veranda\'s, glazen schuifwanden en hoogwaardige veranda-onderdelen. Wij leveren altijd op maat gemaakt bouwpakketten, afgestemd op uw wensen en woning.',
                   'Power Veranda specializes in custom verandas, glass sliding walls and high-quality veranda components. We always deliver custom-made construction packages, tailored to your wishes and home.'
@@ -126,7 +126,7 @@ const Home = () => {
                 <Link to="/over-ons">{t('Lees meer', 'Read more')}</Link>
               </Button>
             </div>
-            <div className="h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
+            <div className="h-[250px] md:h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
               <img 
                 src={aboutUsHome} 
                 alt="Power Veranda showroom"
@@ -138,20 +138,20 @@ const Home = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
               {t('Power Veranda – Nieuwe veranda\'s', 'Power Veranda – New verandas')}
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base md:text-lg text-muted-foreground px-4">
               {t(
                 'Ontdek onze nieuwe modellen veranda\'s en overkappingen.',
                 'Discover our new models of verandas and canopies.'
               )}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {products.map((product) => (
               <Card key={product.path} className="overflow-hidden hover:shadow-elegant transition-smooth">
                 <div className="h-48 bg-muted overflow-hidden">
@@ -175,12 +175,12 @@ const Home = () => {
       </section>
 
       {/* USPs Section */}
-      <section className="py-20 bg-secondary">
+      <section className="py-12 md:py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
             {t('Onze Sterke Punten', 'Our Strengths')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {usps.map((usp, index) => (
               <Card key={index} className="text-center p-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
@@ -195,12 +195,12 @@ const Home = () => {
       </section>
 
       {/* New Products Banner */}
-      <section className="py-20 hero-gradient">
+      <section className="py-12 md:py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">
             {t('2025 – Nieuwe Producten', '2025 – New Products')}
           </h2>
-          <p className="text-xl text-white/90 mb-8">
+          <p className="text-base md:text-xl text-white/90 mb-6 md:mb-8">
             {t('Bekijk alle nieuwe veranda\'s', 'View all new verandas')}
           </p>
           <Button size="lg" variant="secondary" asChild>

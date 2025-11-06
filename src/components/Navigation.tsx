@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Left Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -64,12 +64,21 @@ const Navigation = () => {
             </DropdownMenu>
           </div>
 
-          {/* Center Logo */}
-          <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+          {/* Center Logo - Hidden on mobile, shown on desktop */}
+          <Link to="/" className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
             <img 
               src={logo} 
               alt="Power Veranda Logo" 
               className="h-16 w-auto"
+            />
+          </Link>
+
+          {/* Mobile Logo - Left aligned */}
+          <Link to="/" className="lg:hidden">
+            <img 
+              src={logo} 
+              alt="Power Veranda Logo" 
+              className="h-10 w-auto"
             />
           </Link>
 
