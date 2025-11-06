@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import logo from '@/assets/logo.jpg';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,10 +66,11 @@ const Navigation = () => {
 
           {/* Center Logo */}
           <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
-            <div className="text-center">
-              <h1 className="text-2xl font-bold text-primary">Power Veranda</h1>
-              <p className="text-xs text-muted-foreground tracking-wider">MAATWERK VERANDA'S</p>
-            </div>
+            <img 
+              src={logo} 
+              alt="Power Veranda Logo" 
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Right Navigation */}
