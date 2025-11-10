@@ -33,7 +33,7 @@ const Navigation = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 md:h-16">
           {/* Left Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
@@ -69,7 +69,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="Power Veranda Logo" 
-              className="h-16 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 

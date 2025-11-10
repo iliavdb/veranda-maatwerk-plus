@@ -88,7 +88,7 @@ const Home = () => {
                     alt={`Power Veranda ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-teal-900/60 to-teal-900/80"></div>
                 </div>
               </CarouselItem>
             ))}
@@ -111,28 +111,28 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('OVER ONS', 'ABOUT US')}</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">{t('OVER ONS', 'ABOUT US')}</h2>
+              <p className="text-base text-muted-foreground leading-relaxed mb-4">
                 {t(
                   'Wij zijn een groothandel gespecialiseerd in veranda\'s, glazen schuifwanden en aluminium onderdelen voor overkappingen. Power Veranda levert uitsluitend maatwerk veranda\'s die als compleet bouwpakket geleverd worden, klaar voor montage.',
                   'We are a wholesaler specialized in verandas, glass sliding walls and aluminum parts for canopies. Power Veranda exclusively delivers custom verandas that are delivered as a complete construction package, ready for assembly.'
                 )}
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              <p className="text-base text-muted-foreground leading-relaxed mb-6">
                 {t(
                   'Elk project wordt op maat gemaakt en volledig afgestemd op uw specifieke wensen en de architectuur van uw woning.',
                   'Each project is custom-made and fully tailored to your specific wishes and the architecture of your home.'
                 )}
               </p>
-              <Button variant="outline" size="lg" asChild>
+              <Button variant="outline" asChild>
                 <Link to="/over-ons">{t('Lees meer', 'Read more')}</Link>
               </Button>
             </div>
-            <div className="order-1 md:order-2 h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-elegant">
+            <div className="order-1 md:order-2 h-[280px] md:h-[380px] rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={aboutUsHome} 
                 alt="Power Veranda"
@@ -144,32 +144,32 @@ const Home = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
               {t('NIEUWE VERANDA\'S', 'NEW VERANDAS')}
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base text-muted-foreground">
               {t(
                 'Er is in elke prijscategorie een geschikte veranda te vinden voor ieder wat wils.',
                 'There is a suitable veranda available in every price range for everyone.'
               )}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {products.map((product) => (
-              <Card key={product.path} className="overflow-hidden hover:shadow-elegant transition-smooth group">
-                <div className="relative h-48">
+              <Card key={product.path} className="overflow-hidden hover:shadow-lg transition-smooth group border-2">
+                <div className="relative h-40 md:h-48">
                   <img 
                     src={product.image} 
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                   />
                 </div>
-                <CardContent className="p-4 text-center">
-                  <h3 className="text-lg font-bold mb-2">{product.name}</h3>
-                  <Button variant="default" size="sm" asChild className="mt-2">
+                <CardContent className="p-3 text-center">
+                  <h3 className="text-base md:text-lg font-bold mb-2">{product.name}</h3>
+                  <Button variant="default" size="sm" asChild className="w-full">
                     <Link to={product.path}>{t('BEKIJKEN', 'VIEW')}</Link>
                   </Button>
                 </CardContent>
@@ -180,32 +180,32 @@ const Home = () => {
       </section>
 
       {/* USPs Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-16 max-w-4xl mx-auto">
             {usps.map((usp, index) => (
-              <Card key={index} className="text-center p-8 border-2">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-6">
-                  <usp.icon className="h-8 w-8 text-accent" />
+              <div key={index} className="text-center flex-shrink-0">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-4">
+                  <usp.icon className="h-10 w-10 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{usp.title}</h3>
-                <p className="text-muted-foreground">{usp.description}</p>
-              </Card>
+                <h3 className="text-lg font-bold mb-2">{usp.title}</h3>
+                <p className="text-sm text-muted-foreground max-w-[200px]">{usp.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* New Products Banner */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-12 md:py-16 bg-gradient-to-r from-teal-700 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">
             {t('2025 – NIEUWE PRODUCTEN', '2025 – NEW PRODUCTS')}
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          <p className="text-base md:text-lg mb-6 opacity-95">
             {t('Bekijk alle nieuwe veranda\'s', 'View all new verandas')}
           </p>
-          <Button size="lg" variant="default" asChild className="bg-accent hover:bg-accent/90">
+          <Button size="lg" variant="secondary" asChild>
             <Link to="/galerij">{t('Galerij bekijken', 'View gallery')}</Link>
           </Button>
         </div>
