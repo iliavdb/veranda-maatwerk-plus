@@ -5,11 +5,12 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-8">{t('Over Ons', 'About Us')}</h1>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-bold mb-2">{t('OVER ONS', 'ABOUT US')}</h1>
+        <div className="h-1 w-20 bg-accent mb-12"></div>
         
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-12 mb-12 max-w-6xl">
           <div>
             <h2 className="text-2xl font-bold mb-4">
               {t('Wie zijn wij?', 'Who are we?')}
@@ -28,7 +29,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="h-[400px] bg-muted rounded-lg shadow-elegant overflow-hidden">
+          <div className="h-[400px] rounded-lg shadow-elegant overflow-hidden">
             <img 
               src={overOnsImg} 
               alt="Power Veranda magazijn"
@@ -37,8 +38,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-secondary p-6 rounded-lg">
+        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl">
+          <div className="bg-secondary p-8 rounded-lg border-2">
             <h3 className="text-xl font-bold mb-3">{t('Maatwerk', 'Custom Made')}</h3>
             <p className="text-muted-foreground">
               {t(
@@ -48,7 +49,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-secondary p-6 rounded-lg">
+          <div className="bg-secondary p-8 rounded-lg border-2">
             <h3 className="text-xl font-bold mb-3">{t('Kwaliteit', 'Quality')}</h3>
             <p className="text-muted-foreground">
               {t(
@@ -58,7 +59,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-secondary p-6 rounded-lg">
+          <div className="bg-secondary p-8 rounded-lg border-2">
             <h3 className="text-xl font-bold mb-3">{t('Service', 'Service')}</h3>
             <p className="text-muted-foreground">
               {t(
@@ -69,25 +70,25 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-primary text-primary-foreground p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-4">
+        <div className="bg-secondary p-8 rounded-lg border-2 max-w-6xl">
+          <h2 className="text-2xl font-bold mb-6">
             {t('Onze Expertise', 'Our Expertise')}
           </h2>
-          <ul className="space-y-3 text-lg">
+          <ul className="grid md:grid-cols-2 gap-4 text-lg">
             <li className="flex items-start">
-              <span className="mr-3">✓</span>
+              <span className="mr-3 text-accent text-xl">✓</span>
               <span>{t('Maatwerk veranda\'s in alle maten en stijlen', 'Custom verandas in all sizes and styles')}</span>
             </li>
             <li className="flex items-start">
-              <span className="mr-3">✓</span>
+              <span className="mr-3 text-accent text-xl">✓</span>
               <span>{t('Glazen schuifwanden voor maximaal wooncomfort', 'Glass sliding walls for maximum living comfort')}</span>
             </li>
             <li className="flex items-start">
-              <span className="mr-3">✓</span>
+              <span className="mr-3 text-accent text-xl">✓</span>
               <span>{t('Aluminium onderdelen van topkwaliteit', 'Aluminum parts of top quality')}</span>
             </li>
             <li className="flex items-start">
-              <span className="mr-3">✓</span>
+              <span className="mr-3 text-accent text-xl">✓</span>
               <span>{t('Complete bouwpakketten, kant-en-klaar', 'Complete construction packages, ready-to-use')}</span>
             </li>
           </ul>
