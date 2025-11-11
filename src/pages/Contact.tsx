@@ -41,10 +41,10 @@ const Contact = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-12 text-center">CONTACT</h1>
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12 text-center">CONTACT</h1>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 max-w-5xl mx-auto">
           {/* Contact Information Cards */}
           <div className="space-y-6">
             <Card className="border-2">

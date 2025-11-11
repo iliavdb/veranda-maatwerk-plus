@@ -31,10 +31,10 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-8">{t('GALERIJ', 'GALLERY')}</h1>
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8">{t('GALERIJ', 'GALLERY')}</h1>
         
-        <div className="flex gap-4 mb-12">
+        <div className="flex gap-3 md:gap-4 mb-8 md:mb-12">
           <Button
             variant={filter === 'all' ? 'default' : 'outline'}
             onClick={() => setFilter('all')}

@@ -6,22 +6,22 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-2">{t('OVER ONS', 'ABOUT US')}</h1>
-        <div className="h-1 w-20 bg-accent mb-12"></div>
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">{t('OVER ONS', 'ABOUT US')}</h1>
+        <div className="h-1 w-20 bg-accent mb-8 md:mb-12"></div>
         
-        <div className="grid md:grid-cols-2 gap-12 mb-12 max-w-6xl">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12 max-w-6xl">
           <div>
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
               {t('Wie zijn wij?', 'Who are we?')}
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4 md:mb-6">
               {t(
                 'Wij zijn een groothandel gespecialiseerd in veranda\'s, glazen schuifwanden en aluminium onderdelen voor overkappingen. Power Veranda levert uitsluitend maatwerk veranda\'s die als compleet bouwpakket geleverd worden, klaar voor montage.',
                 'We are a wholesaler specialized in verandas, glass sliding walls and aluminum parts for canopies. Power Veranda exclusively delivers custom verandas that are delivered as a complete construction package, ready for assembly.'
               )}
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               {t(
                 'Elk project wordt op maat gemaakt en volledig afgestemd op uw specifieke wensen en de architectuur van uw woning. Van ontwerp tot levering, wij zorgen voor kwaliteit en precisie.',
                 'Each project is custom-made and fully tailored to your specific wishes and the architecture of your home. From design to delivery, we ensure quality and precision.'
@@ -29,7 +29,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="h-[400px] rounded-lg shadow-elegant overflow-hidden">
+          <div className="h-[250px] md:h-[350px] lg:h-[400px] rounded-lg shadow-elegant overflow-hidden">
             <img 
               src={overOnsImg} 
               alt="Power Veranda magazijn"
@@ -38,9 +38,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12 max-w-6xl">
-          <div className="bg-secondary p-8 rounded-lg border-2">
-            <h3 className="text-xl font-bold mb-3">{t('Maatwerk', 'Custom Made')}</h3>
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12 max-w-6xl">
+          <div className="bg-secondary p-6 md:p-8 rounded-lg border-2">
+            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{t('Maatwerk', 'Custom Made')}</h3>
             <p className="text-muted-foreground">
               {t(
                 'Elk bouwpakket wordt speciaal voor u op maat gemaakt.',
@@ -49,8 +49,8 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-secondary p-8 rounded-lg border-2">
-            <h3 className="text-xl font-bold mb-3">{t('Kwaliteit', 'Quality')}</h3>
+          <div className="bg-secondary p-6 md:p-8 rounded-lg border-2">
+            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{t('Kwaliteit', 'Quality')}</h3>
             <p className="text-muted-foreground">
               {t(
                 'Hoogwaardige materialen en perfecte afwerking.',
@@ -59,8 +59,8 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-secondary p-8 rounded-lg border-2">
-            <h3 className="text-xl font-bold mb-3">{t('Service', 'Service')}</h3>
+          <div className="bg-secondary p-6 md:p-8 rounded-lg border-2">
+            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">{t('Service', 'Service')}</h3>
             <p className="text-muted-foreground">
               {t(
                 'Van ontwerp tot levering, wij begeleiden u in het hele proces.',
@@ -70,11 +70,11 @@ const About = () => {
           </div>
         </div>
 
-        <div className="bg-secondary p-8 rounded-lg border-2 max-w-6xl">
-          <h2 className="text-2xl font-bold mb-6">
+        <div className="bg-secondary p-6 md:p-8 rounded-lg border-2 max-w-6xl">
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">
             {t('Onze Expertise', 'Our Expertise')}
           </h2>
-          <ul className="grid md:grid-cols-2 gap-4 text-lg">
+          <ul className="grid md:grid-cols-2 gap-3 md:gap-4 text-base md:text-lg">
             <li className="flex items-start">
               <span className="mr-3 text-accent text-xl">✓</span>
               <span>{t('Maatwerk veranda\'s in alle maten en stijlen', 'Custom verandas in all sizes and styles')}</span>

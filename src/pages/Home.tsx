@@ -68,7 +68,7 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[450px] md:h-[550px] lg:h-[650px] flex items-center justify-center overflow-hidden">
         <Carousel
           opts={{ loop: true }}
           plugins={[
@@ -82,7 +82,7 @@ const Home = () => {
           <CarouselContent>
             {heroImages.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="relative h-[500px] md:h-[600px] lg:h-[700px] w-full">
+                <div className="relative h-[450px] md:h-[550px] lg:h-[650px] w-full">
                   <img 
                     src={image} 
                     alt={`Power Veranda ${index + 1}`}
@@ -95,10 +95,10 @@ const Home = () => {
           </CarouselContent>
         </Carousel>
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 leading-tight">
             {t('Ontdek onze maatwerk veranda\'s', 'Discover our custom verandas')}
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             {t(
               'Hoogwaardige veranda\'s, glazen schuifwanden en aluminium onderdelen op maat',
               'High-quality verandas, glass sliding walls and custom aluminum parts'
@@ -111,11 +111,11 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-12 md:py-20 bg-background">
+      <section className="py-10 md:py-16 lg:py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">{t('OVER ONS', 'ABOUT US')}</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-5">{t('OVER ONS', 'ABOUT US')}</h2>
               <p className="text-base text-muted-foreground leading-relaxed mb-4">
                 {t(
                   'Wij zijn een groothandel gespecialiseerd in veranda\'s, glazen schuifwanden en aluminium onderdelen voor overkappingen. Power Veranda levert uitsluitend maatwerk veranda\'s die als compleet bouwpakket geleverd worden, klaar voor montage.',
@@ -132,7 +132,7 @@ const Home = () => {
                 <Link to="/over-ons">{t('Lees meer', 'Read more')}</Link>
               </Button>
             </div>
-            <div className="order-1 md:order-2 h-[280px] md:h-[380px] rounded-lg overflow-hidden shadow-lg">
+            <div className="order-1 md:order-2 h-[240px] md:h-[320px] lg:h-[380px] rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={aboutUsHome} 
                 alt="Power Veranda"
@@ -144,10 +144,10 @@ const Home = () => {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 md:py-20 bg-muted/30">
+      <section className="py-10 md:py-16 lg:py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <div className="text-center mb-8 md:mb-10 max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
               {t('NIEUWE VERANDA\'S', 'NEW VERANDAS')}
             </h2>
             <p className="text-base text-muted-foreground">
@@ -157,18 +157,18 @@ const Home = () => {
               )}
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-5xl mx-auto">
             {products.map((product) => (
               <Card key={product.path} className="overflow-hidden hover:shadow-lg transition-smooth group border-2">
-                <div className="relative h-40 md:h-48">
+                <div className="relative h-32 md:h-40 lg:h-48">
                   <img 
                     src={product.image} 
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
                   />
                 </div>
-                <CardContent className="p-3 text-center">
-                  <h3 className="text-base md:text-lg font-bold mb-2">{product.name}</h3>
+                <CardContent className="p-2 md:p-3 text-center">
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold mb-1 md:mb-2">{product.name}</h3>
                   <Button variant="default" size="sm" asChild className="w-full">
                     <Link to={product.path}>{t('BEKIJKEN', 'VIEW')}</Link>
                   </Button>
@@ -180,16 +180,16 @@ const Home = () => {
       </section>
 
       {/* USPs Section */}
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-12 lg:py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-16 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 max-w-4xl mx-auto">
             {usps.map((usp, index) => (
-              <div key={index} className="text-center flex-shrink-0">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-4">
-                  <usp.icon className="h-10 w-10 text-accent" />
+              <div key={index} className="text-center flex-shrink-0 w-full sm:w-auto">
+                <div className="inline-flex items-center justify-center w-16 md:w-20 h-16 md:h-20 rounded-full bg-accent/10 mb-3 md:mb-4">
+                  <usp.icon className="h-8 md:h-10 w-8 md:w-10 text-accent" />
                 </div>
-                <h3 className="text-lg font-bold mb-2">{usp.title}</h3>
-                <p className="text-sm text-muted-foreground max-w-[200px]">{usp.description}</p>
+                <h3 className="text-base md:text-lg font-bold mb-1 md:mb-2">{usp.title}</h3>
+                <p className="text-sm text-muted-foreground max-w-[240px] md:max-w-[200px] mx-auto">{usp.description}</p>
               </div>
             ))}
           </div>
@@ -197,9 +197,9 @@ const Home = () => {
       </section>
 
       {/* New Products Banner */}
-      <section className="py-12 md:py-16 bg-gradient-to-r from-teal-700 to-teal-600 text-white">
+      <section className="py-10 md:py-12 lg:py-16 bg-gradient-to-r from-teal-700 to-teal-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
             {t('2025 – NIEUWE PRODUCTEN', '2025 – NEW PRODUCTS')}
           </h2>
           <p className="text-base md:text-lg mb-6 opacity-95">
